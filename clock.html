@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            background-color: #042444;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .clock {
+            width: 300px;
+            height: 100px;
+            box-shadow: 0px 0px 10px black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            background-color: cyan;
+            box-shadow: 0px 0px 40px cyan;
+            z-index: 100;
+            padding: 0px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .clock span {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .glow {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: cyan;
+            box-shadow: 0px 0px 30px cyan;
+            margin-left: 30px;
+        }
+
+        .span-1 {animation: animate-span 2s linear 1s infinite;}
+
+        .span-2 {animation: animate-span 2s linear .5s infinite;}
+
+        .span-3 {animation: animate-span 2s linear .3s infinite;}
+
+        .span-4 {animation: animate-span 2s linear .4s infinite;}
+
+        .span-5 {animation: animate-span 2s linear .8s infinite;}
+
+        .span-6 {animation: animate-span 2s linear .1s infinite;}
+
+        .span-7 {animation: animate-span 2s linear .9s infinite;}
+
+        .span-8 {animation: animate-span 2s linear .1s infinite;}
+
+        .span-9 {animation: animate-span 2s linear 1s infinite;}
+
+        .span-10 {animation: animate-span 2s linear .5s infinite;}
+
+        .span-11 {animation: animate-span 2s linear 7s infinite;}
+
+        .span-12 {animation: animate-span 2s linear .9s infinite;}
+
+        .span-13 {animation: animate-span 2s linear .7s infinite;}
+
+        .span-14 {animation: animate-span 2s linear .2s infinite;}
+
+        .span-15 {animation: animate-span 2s linear .8s infinite;}
+
+        .span-16 {animation: animate-span 2s linear .3s infinite;}
+
+        .span-17 {animation: animate-span 2s linear .8s infinite;}
+
+        .span-18 {animation: animate-span 2s linear .2s infinite;}
+
+        .span-19 {animation: animate-span 2s linear 9s infinite;}
+
+        .span-20 {animation: animate-span 2s linear .5s infinite;}
+
+        .glow::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            right: 110%;
+            background-color: cyan;
+            animation: animate-span 10s linear 5s infinite backwards;
+            box-shadow: 0px 0px 30px cyan;
+        }
+
+        @keyframes animate-span {
+            0% {
+                transform: translateY(100vh);
+            }
+
+            100% {
+                transform: translateY(0vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <span class="date">D</span>
+        <span>:</span>
+        <span class="hour">H</span>
+        <span>:</span>
+        <span class="minute">M</span>
+        <span>:</span>
+        <span class="seconds">S</span>
+    </div>
+
+    <span class="glow span-1"></span>
+    <span class="glow span-2"></span>
+    <span class="glow span-3"></span>
+    <span class="glow span-4"></span>
+    <span class="glow span-5"></span>
+    <span class="glow span-6"></span>
+    <span class="glow span-7"></span>
+    <span class="glow span-8"></span>
+    <span class="glow span-9"></span>
+    <span class="glow span-10"></span>
+    <span class="glow span-11"></span>
+    <span class="glow span-12"></span>
+    <span class="glow span-13"></span>
+    <span class="glow span-14"></span>
+    <span class="glow span-15"></span>
+    <span class="glow span-16"></span>
+    <span class="glow span-17"></span>
+    <span class="glow span-18"></span>
+    <span class="glow span-19"></span>
+    <span class="glow span-20"></span>
+
+    <script>
+        let returnId = setInterval(() => {
+            let time = new Date();
+            let date = time.getDate();
+            let hour = time.getHours();
+            let minute = time.getMinutes();
+            let seconds = time.getSeconds();
+            document.getElementsByClassName("date")[0].innerHTML = date;
+            document.getElementsByClassName("hour")[0].innerHTML = hour;
+            document.getElementsByClassName("minute")[0].innerHTML = minute;
+            document.getElementsByClassName("seconds")[0].innerHTML = seconds;
+        }, 0)
+    </script>
+</body>
+
+</html>
